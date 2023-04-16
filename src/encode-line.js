@@ -11,7 +11,6 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function encodeLine(str) {
-  // let sortStr = resArr.join('');
   let resArr =[];
   let x = 1;
   for(let i=0;i<str.length;i++){
@@ -26,7 +25,6 @@ function encodeLine(str) {
     }      
   }
   return resArr.join('');
-
 }
 
 module.exports = {
