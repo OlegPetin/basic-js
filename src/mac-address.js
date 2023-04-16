@@ -22,12 +22,7 @@ function isMAC48Address(n) {
     } else{
       return true;
     }
-
-
   }
-
-
-
 }
 module.exports = {
   isMAC48Address
