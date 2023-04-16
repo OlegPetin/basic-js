@@ -20,6 +20,7 @@ function transform(arr) {
       return resArr;
     } else {
       console.log(arr);
+
       // if (arr.includes('--discard-prev') || arr.includes('--double-prev') || arr.includes('--double-next') ||arr.includes('--discard-next') && arr.findIndex('--discard-prev') !=0 && arr.findIndex('--double-prev') !=0 && arr.findIndex('--double-next') !=arr.length-1 && arr.findIndex('--discard-next') !=arr.length-1 ) {
       //   console.log(arr);
       // } else {
@@ -29,9 +30,6 @@ function transform(arr) {
   } else {
     throw new Error('\'arr\' parameter must be an instance of the Array!');
   }
-
- 
- 
   
 }
 
