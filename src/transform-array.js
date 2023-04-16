@@ -19,6 +19,10 @@ function transform(arr) {
     if (arr.length == 0) {
       return resArr;
     } else {
+      for( let i=0; i<arr.length;i++){
+        
+
+      }
       console.log(arr);
 
       // if (arr.includes('--discard-prev') || arr.includes('--double-prev') || arr.includes('--double-next') ||arr.includes('--discard-next') && arr.findIndex('--discard-prev') !=0 && arr.findIndex('--double-prev') !=0 && arr.findIndex('--double-next') !=arr.length-1 && arr.findIndex('--discard-next') !=arr.length-1 ) {

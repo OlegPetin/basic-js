@@ -43,7 +43,6 @@ console.log(res);
 return (res.repeat(additionRepeatTimes)+separator).repeat(repeatTimes);
 
 
-  // return ((res).repeat(additionRepeatTimes)+separator).repeat(repeatTimes);
 }
 
 module.exports = {
