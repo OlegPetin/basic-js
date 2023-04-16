@@ -19,7 +19,6 @@ class DepthCalculator {
       if(Array.isArray(element)){
         res = Math.max(this.calculateDepth(element), res);
       }
-      
     });
     return res+1;
 
