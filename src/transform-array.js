@@ -14,27 +14,43 @@ const { NotImplementedError } = require('../extensions/index.js');
  * 
  */
 function transform(arr) {
- let resArr =[];
-  if (Array.isArray(arr) == true) {
-    if (arr.length == 0) {
-      return resArr;
-    } else {
-      for( let i=0; i<arr.length;i++){
-        
-
+  let arrResult = [];
+  let noAction = false;
+  if(Array.isArray(arr)){
+    for(let i=0; i<arr.length; i++){
+      switch (arr[i]) {
+        case '--double-next':
+          if(arr[i+1] !== undefined){
+            arrResult.push(arr[i+1]);
+          }           
+          break;
+        case '--double-prev':
+          if(arr[i-1] !== undefined && !noAction){
+            arrResult.push(arr[i-1]);
+          }       
+          break;          
+        case '--discard-prev':
+          if(i!=0 && !noAction){
+            arrResult.pop();
+          }          
+          break;
+        case '--discard-next':          
+          if(arr[i+2]=='--double-prev' || arr[i+2]=='--discard-prev'){
+            noAction=true;
+          }
+          i++;
+          break;
+        default:
+            arrResult.push(arr[i]);               
+          break;
       }
-      console.log(arr);
-
-      // if (arr.includes('--discard-prev') || arr.includes('--double-prev') || arr.includes('--double-next') ||arr.includes('--discard-next') && arr.findIndex('--discard-prev') !=0 && arr.findIndex('--double-prev') !=0 && arr.findIndex('--double-next') !=arr.length-1 && arr.findIndex('--discard-next') !=arr.length-1 ) {
-      //   console.log(arr);
-      // } else {
-      //   throw new Error('\'arr\' parameter must be an instance of the Array!');
-      // }
-    }    
-  } else {
-    throw new Error('\'arr\' parameter must be an instance of the Array!');
+    }
   }
-  
+  else{
+    throw new Error("'arr' parameter must be an instance of the Array!");
+  }
+
+  return arrResult;  
 }
 
 module.exports = {
