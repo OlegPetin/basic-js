@@ -21,8 +21,6 @@ class DepthCalculator {
       }
     });
     return res+1;
-
-
   }
 }
 

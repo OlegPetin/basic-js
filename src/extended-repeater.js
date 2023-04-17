@@ -20,7 +20,7 @@ function repeater(str, options) {
   let separator='+';
   let addition='';
   let additionRepeatTimes=1;
-  let additionSeparator='';
+  let additionSeparator='|';
   let res='';
   if(options.repeatTimes !== undefined){
     repeatTimes=options.repeatTimes;
@@ -38,9 +38,24 @@ function repeater(str, options) {
     additionSeparator=options.additionSeparator;
   }
 // console.log(str + addition + additionSeparator);
-res=(str + addition + additionSeparator);
-console.log(res);
-return (res.repeat(additionRepeatTimes)+separator).repeat(repeatTimes);
+// res=(str + addition + additionSeparator);
+// console.log(res);
+// return (res.repeat(additionRepeatTimes)+separator).repeat(repeatTimes);
+for(let i=0;i<repeatTimes;i++){
+  res+=str;
+  if(addition!==''){
+    for(let j=0;j<additionRepeatTimes;j++){
+      res+=addition;
+      if(j+1!=additionRepeatTimes){
+        res+=additionSeparator;
+      }
+    }      
+  }
+  if(i+1!=repeatTimes){
+    res+=separator;
+  }
+}
+return res;
 
 
 }
